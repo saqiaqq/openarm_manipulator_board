@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>openarm_manipulator_board</name>
+  <version>0.1.0</version>
+  <description>
+    机械臂板卡协议适配节点。订阅上位机发来的 /robot_arm/start 和 /robot_arm/command
+    话题（MANIPULATOR_PROTOCOL 1.1），将协议命令转换为对 openarm_skills 的
+    Action/Service 调用，并以 /robot_arm/status 回传执行状态。
+  </description>
+  <maintainer email="user@example.com">User</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>openarm_skills</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
